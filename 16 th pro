@@ -1,0 +1,28 @@
+16. Create a Simple Stopwatch
+using System;
+using System.Diagnostics;
+
+class SimpleStopwatch
+{
+    static void Main()
+    {
+        Stopwatch stopwatch = new Stopwatch();
+
+        Console.WriteLine("Press 's' to start the stopwatch and 'e' to stop it.");
+        while (true)
+        {
+            var key = Console.ReadKey();
+            if (key.Key == ConsoleKey.S)
+            {
+                stopwatch.Start();
+                Console.WriteLine("\nStopwatch started.");
+            }
+            else if (key.Key == ConsoleKey.E)
+            {
+                stopwatch.Stop();
+                Console.WriteLine($"\nStopwatch stopped. Elapsed time: {stopwatch.Elapsed.TotalSeconds} seconds.");
+                break;
+            }
+        }
+    }
+}
