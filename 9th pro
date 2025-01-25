@@ -1,0 +1,70 @@
+9. Simple Bank Account System
+using System;
+
+class BankAccount
+{
+    static double balance = 0;
+
+    static void Main()
+    {
+        while (true)
+        {
+            Console.WriteLine("Bank Account System");
+            Console.WriteLine("1. Deposit");
+            Console.WriteLine("2. Withdraw");
+            Console.WriteLine("3. Check Balance");
+            Console.WriteLine("4. Exit");
+            Console.Write("Choose an option: ");
+            string option = Console.ReadLine();
+
+            if (option == "1")
+            {
+                Console.Write("Enter amount to deposit: ");
+                double amount = Convert.ToDouble(Console.ReadLine());
+                Deposit(amount);
+            }
+            else if (option == "2")
+            {
+                Console.Write("Enter amount to withdraw: ");
+                double amount = Convert.ToDouble(Console.ReadLine());
+                Withdraw(amount);
+            }
+            else if (option == "3")
+            {
+                CheckBalance();
+            }
+            else if (option == "4")
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Invalid option, please try again.");
+            }
+        }
+    }
+
+    static void Deposit(double amount)
+    {
+        balance += amount;
+        Console.WriteLine($"Deposited {amount}. New balance: {balance}");
+    }
+
+    static void Withdraw(double amount)
+    {
+        if (amount <= balance)
+        {
+            balance -= amount;
+            Console.WriteLine($"Withdrew {amount}. New balance: {balance}");
+        }
+        else
+        {
+            Console.WriteLine("Insufficient funds.");
+        }
+    }
+
+    static void CheckBalance()
+    {
+        Console.WriteLine($"Current balance: {balance}");
+    }
+}
