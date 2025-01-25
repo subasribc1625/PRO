@@ -1,0 +1,22 @@
+33. Find the Largest and Smallest Numbers in an Array
+using System;
+
+class MinMaxArray
+{
+    static void Main()
+    {
+        int[] numbers = { 56, 12, 89, 33, 67, 99, 42 };
+
+        int max = numbers[0];
+        int min = numbers[0];
+
+        foreach (int num in numbers)
+        {
+            if (num > max) max = num;
+            if (num < min) min = num;
+        }
+
+        Console.WriteLine($"The largest number is: {max}");
+        Console.WriteLine($"The smallest number is: {min}");
+    }
+}
