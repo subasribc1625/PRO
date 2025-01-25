@@ -1,0 +1,24 @@
+27. Sum of Even and Odd Numbers in an Array
+using System;
+
+class EvenOddSum
+{
+    static void Main()
+    {
+        int[] numbers = { 5, 10, 13, 18, 25, 30, 42, 55, 60 };
+
+        int evenSum = 0;
+        int oddSum = 0;
+
+        foreach (int num in numbers)
+        {
+            if (num % 2 == 0)
+                evenSum += num;
+            else
+                oddSum += num;
+        }
+
+        Console.WriteLine($"Sum of even numbers: {evenSum}");
+        Console.WriteLine($"Sum of odd numbers: {oddSum}");
+    }
+}
