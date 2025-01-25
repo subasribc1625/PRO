@@ -1,0 +1,23 @@
+32. Count Words in a Text File
+using System;
+using System.IO;
+
+class WordCounterFromFile
+{
+    static void Main()
+    {
+        Console.Write("Enter the path of the text file: ");
+        string filePath = Console.ReadLine();
+
+        if (File.Exists(filePath))
+        {
+            string text = File.ReadAllText(filePath);
+            string[] words = text.Split(new[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            Console.WriteLine($"The number of words in the file is: {words.Length}");
+        }
+        else
+        {
+            Console.WriteLine("File does not exist.");
+        }
+    }
+}
