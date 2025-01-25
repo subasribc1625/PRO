@@ -1,0 +1,20 @@
+20. Find the Factorial of a Number
+using System;
+
+class Factorial
+{
+    static void Main()
+    {
+        Console.Write("Enter a number to find its factorial: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        long factorial = 1;
+
+        for (int i = 1; i <= number; i++)
+        {
+            factorial *= i;
+        }
+
+        Console.WriteLine($"The factorial of {number} is {factorial}.");
+    }
+}
