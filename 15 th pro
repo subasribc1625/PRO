@@ -1,0 +1,22 @@
+15. Find Maximum in an Array
+using System;
+
+class MaxInArray
+{
+    static void Main()
+    {
+        int[] numbers = { 45, 89, 12, 67, 92, 33, 51 };
+        
+        int max = numbers[0];
+
+        foreach (int number in numbers)
+        {
+            if (number > max)
+            {
+                max = number;
+            }
+        }
+
+        Console.WriteLine($"The maximum number in the array is: {max}");
+    }
+}
