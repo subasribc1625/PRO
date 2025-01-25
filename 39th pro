@@ -1,0 +1,84 @@
+39. Simple Bank Account System (With Interest Calculation)
+using System;
+
+class BankAccountWithInterest
+{
+    static double balance = 0;
+
+    static void Main()
+    {
+        Console.WriteLine("Welcome to the bank account system!");
+
+        while (true)
+        {
+            Console.WriteLine("\n1. Deposit");
+            Console.WriteLine("2. Withdraw");
+            Console.WriteLine("3. Check Balance");
+            Console.WriteLine("4. Calculate Interest");
+            Console.WriteLine("5. Exit");
+            Console.Write("Choose an option: ");
+            int option = Convert.ToInt32(Console.ReadLine());
+
+            if (option == 1)
+            {
+                Console.Write("Enter deposit amount: ");
+                double amount = Convert.ToDouble(Console.ReadLine());
+                Deposit(amount);
+            }
+            else if (option == 2)
+            {
+                Console.Write("Enter withdrawal amount: ");
+                double amount = Convert.ToDouble(Console.ReadLine());
+                Withdraw(amount);
+            }
+            else if (option == 3)
+            {
+                CheckBalance();
+            }
+            else if (option == 4)
+            {
+                CalculateInterest();
+            }
+            else if (option == 5)
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Invalid option. Please try again.");
+            }
+        }
+    }
+
+    static void Deposit(double amount)
+    {
+        balance += amount;
+        Console.WriteLine($"Deposited: {amount}. New balance: {balance}");
+    }
+
+    static void Withdraw(double amount)
+    {
+        if (amount <= balance)
+        {
+            balance -= amount;
+            Console.WriteLine($"Withdrawn: {amount}. New balance: {balance}");
+        }
+        else
+        {
+            Console.WriteLine("Insufficient balance.");
+        }
+    }
+
+    static void CheckBalance()
+    {
+        Console.WriteLine($"Current balance: {balance}");
+    }
+
+    static void CalculateInterest()
+    {
+        Console.Write("Enter interest rate (in %): ");
+        double rate = Convert.ToDouble(Console.ReadLine());
+        double interest = balance * (rate / 100);
+        Console.WriteLine($"Interest on current balance: {interest}");
+    }
+}
