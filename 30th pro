@@ -1,0 +1,37 @@
+30. String Palindrome Using Stack
+using System;
+using System.Collections.Generic;
+
+class PalindromeWithStack
+{
+    static void Main()
+    {
+        Console.Write("Enter a string to check if it's a palindrome: ");
+        string input = Console.ReadLine().ToLower().Replace(" ", "");
+
+        Stack<char> stack = new Stack<char>();
+
+        // Push all characters to the stack
+        foreach (char c in input)
+        {
+            stack.Push(c);
+        }
+
+        // Rebuild the string from the stack
+        string reversed = string.Empty;
+        while (stack.Count > 0)
+        {
+            reversed += stack.Pop();
+        }
+
+        // Check if the string is a palindrome
+        if (input == reversed)
+        {
+            Console.WriteLine($"'{input}' is a palindrome!");
+        }
+        else
+        {
+            Console.WriteLine($"'{input}' is not a palindrome.");
+        }
+    }
+}
