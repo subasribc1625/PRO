@@ -1,0 +1,25 @@
+49. Fibonacci Sequence (Iterative Approach)
+using System;
+
+class Fibonacci
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of terms for Fibonacci sequence: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Fibonacci Sequence:");
+        int a = 0, b = 1;
+
+        Console.WriteLine(a);
+        Console.WriteLine(b);
+
+        for (int i = 2; i < n; i++)
+        {
+            int nextTerm = a + b;
+            Console.WriteLine(nextTerm);
+            a = b;
+            b = nextTerm;
+        }
+    }
+}
