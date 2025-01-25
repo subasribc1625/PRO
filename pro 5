@@ -1,0 +1,42 @@
+5. Basic To-Do List
+using System;
+using System.Collections.Generic;
+
+class ToDoList
+{
+    static void Main()
+    {
+        List<string> tasks = new List<string>();
+        string input;
+
+        while (true)
+        {
+            Console.WriteLine("1. Add Task\n2. View Tasks\n3. Exit");
+            input = Console.ReadLine();
+
+            if (input == "1")
+            {
+                Console.WriteLine("Enter a task:");
+                string task = Console.ReadLine();
+                tasks.Add(task);
+                Console.WriteLine("Task added!");
+            }
+            else if (input == "2")
+            {
+                Console.WriteLine("To-Do List:");
+                foreach (var task in tasks)
+                {
+                    Console.WriteLine($"- {task}");
+                }
+            }
+            else if (input == "3")
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice! Please select 1, 2, or 3.");
+            }
+        }
+    }
+}
