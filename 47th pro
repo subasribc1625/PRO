@@ -1,0 +1,24 @@
+47. Finding the Longest Word in a Sentence
+using System;
+
+class LongestWord
+{
+    static void Main()
+    {
+        Console.Write("Enter a sentence: ");
+        string sentence = Console.ReadLine();
+
+        string[] words = sentence.Split(new[] { ' ', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
+        string longestWord = "";
+
+        foreach (string word in words)
+        {
+            if (word.Length > longestWord.Length)
+            {
+                longestWord = word;
+            }
+        }
+
+        Console.WriteLine($"The longest word is: {longestWord}");
+    }
+}
