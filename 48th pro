@@ -1,0 +1,44 @@
+48. Student Class with Methods and Properties
+using System;
+
+class Student
+{
+    public string Name { get; set; }
+    public int[] Grades { get; set; }
+
+    // Constructor
+    public Student(string name, int[] grades)
+    {
+        Name = name;
+        Grades = grades;
+    }
+
+    // Method to calculate average grade
+    public double CalculateAverageGrade()
+    {
+        int sum = 0;
+        foreach (int grade in Grades)
+        {
+            sum += grade;
+        }
+        return (double)sum / Grades.Length;
+    }
+
+    // Method to display student info
+    public void DisplayStudentInfo()
+    {
+        Console.WriteLine($"Name: {Name}");
+        Console.WriteLine($"Average Grade: {CalculateAverageGrade():0.00}");
+    }
+}
+
+class StudentInfo
+{
+    static void Main()
+    {
+        int[] grades = { 90, 85, 88, 92 };
+        Student student = new Student("Alice Johnson", grades);
+
+        student.DisplayStudentInfo();
+    }
+}
