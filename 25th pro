@@ -1,0 +1,18 @@
+25. Date and Time Operations
+using System;
+
+class DateDifference
+{
+    static void Main()
+    {
+        Console.Write("Enter the first date (yyyy-mm-dd): ");
+        DateTime firstDate = DateTime.Parse(Console.ReadLine());
+
+        Console.Write("Enter the second date (yyyy-mm-dd): ");
+        DateTime secondDate = DateTime.Parse(Console.ReadLine());
+
+        TimeSpan difference = secondDate - firstDate;
+
+        Console.WriteLine($"The difference between the two dates is {difference.Days} days.");
+    }
+}
