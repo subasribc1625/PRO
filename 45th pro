@@ -1,0 +1,38 @@
+45. Employee Class with Constructor and Method
+using System;
+
+class Employee
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public double Salary { get; set; }
+
+    // Constructor
+    public Employee(string name, int age, double salary)
+    {
+        Name = name;
+        Age = age;
+        Salary = salary;
+    }
+
+    // Method to display employee details
+    public void DisplayEmployeeDetails()
+    {
+        Console.WriteLine($"Name: {Name}, Age: {Age}, Salary: {Salary}");
+    }
+}
+
+class EmployeeDetails
+{
+    static void Main()
+    {
+        Employee employee1 = new Employee("John Doe", 30, 50000);
+        Employee employee2 = new Employee("Jane Smith", 25, 60000);
+
+        Console.WriteLine("Employee 1 Details:");
+        employee1.DisplayEmployeeDetails();
+
+        Console.WriteLine("\nEmployee 2 Details:");
+        employee2.DisplayEmployeeDetails();
+    }
+}
