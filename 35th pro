@@ -1,0 +1,19 @@
+35. Sum of Digits Using Recursion
+using System;
+
+class RecursiveSumOfDigits
+{
+    static void Main()
+    {
+        Console.Write("Enter a number to find the sum of its digits: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine($"The sum of the digits is: {SumOfDigits(number)}");
+    }
+
+    static int SumOfDigits(int n)
+    {
+        if (n == 0) return 0;
+        return n % 10 + SumOfDigits(n / 10);
+    }
+}
