@@ -1,0 +1,23 @@
+8. Count Vowels in a String
+using System;
+
+class VowelCounter
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter a string:");
+        string input = Console.ReadLine().ToLower();
+        
+        int vowelCount = 0;
+        
+        foreach (char c in input)
+        {
+            if ("aeiou".Contains(c))
+            {
+                vowelCount++;
+            }
+        }
+
+        Console.WriteLine($"The number of vowels in '{input}' is {vowelCount}.");
+    }
+}
