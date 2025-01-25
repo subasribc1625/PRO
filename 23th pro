@@ -1,0 +1,33 @@
+23. Queue Example
+using System;
+using System.Collections.Generic;
+
+class QueueExample
+{
+    static void Main()
+    {
+        Queue<string> queue = new Queue<string>();
+
+        // Enqueue some people
+        queue.Enqueue("John");
+        queue.Enqueue("Alice");
+        queue.Enqueue("Bob");
+
+        Console.WriteLine("Initial queue:");
+        foreach (var person in queue)
+        {
+            Console.WriteLine(person);
+        }
+
+        // Dequeue a person
+        string firstPerson = queue.Dequeue();
+        Console.WriteLine($"\n{firstPerson} has been served and removed from the queue.");
+
+        // Show remaining queue
+        Console.WriteLine("\nRemaining queue:");
+        foreach (var person in queue)
+        {
+            Console.WriteLine(person);
+        }
+    }
+}
