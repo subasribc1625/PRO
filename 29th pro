@@ -1,0 +1,15 @@
+29. Count Words in a Sentence
+using System;
+
+class WordCounter
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter a sentence:");
+        string sentence = Console.ReadLine();
+
+        string[] words = sentence.Split(new[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+        Console.WriteLine($"The number of words in the sentence is: {words.Length}");
+    }
+}
