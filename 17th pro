@@ -1,0 +1,19 @@
+17. Sort an Array of Numbers
+using System;
+
+class SortArray
+{
+    static void Main()
+    {
+        int[] numbers = { 45, 12, 89, 23, 67, 33, 51 };
+
+        Array.Sort(numbers);
+
+        Console.WriteLine("Sorted array:");
+
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
+    }
+}
