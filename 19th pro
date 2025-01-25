@@ -1,0 +1,21 @@
+19. Write and Read from a Text File
+using System;
+using System.IO;
+
+class FileOperations
+{
+    static void Main()
+    {
+        string filePath = "example.txt";
+
+        // Write to the file
+        Console.WriteLine("Enter some text to write to the file:");
+        string text = Console.ReadLine();
+        File.WriteAllText(filePath, text);
+
+        // Read from the file
+        string readText = File.ReadAllText(filePath);
+        Console.WriteLine("Contents of the file:");
+        Console.WriteLine(readText);
+    }
+}
