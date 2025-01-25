@@ -1,0 +1,97 @@
+41. Simple ATM System Simulation
+using System;
+
+class ATMSimulation
+{
+    static double balance = 5000;
+
+    static void Main()
+    {
+        Console.WriteLine("Welcome to ATM!");
+        while (true)
+        {
+            Console.WriteLine("\n1. Check Balance");
+            Console.WriteLine("2. Deposit");
+            Console.WriteLine("3. Withdraw");
+            Console.WriteLine("4. Transfer Money");
+            Console.WriteLine("5. Exit");
+            Console.Write("Select an option: ");
+            int option = Convert.ToInt32(Console.ReadLine());
+
+            switch (option)
+            {
+                case 1:
+                    CheckBalance();
+                    break;
+                case 2:
+                    Deposit();
+                    break;
+                case 3:
+                    Withdraw();
+                    break;
+                case 4:
+                    TransferMoney();
+                    break;
+                case 5:
+                    Console.WriteLine("Thank you for using ATM!");
+                    return;
+                default:
+                    Console.WriteLine("Invalid option.");
+                    break;
+            }
+        }
+    }
+
+    static void CheckBalance()
+    {
+        Console.WriteLine($"Your current balance is: ${balance}");
+    }
+
+    static void Deposit()
+    {
+        Console.Write("Enter deposit amount: ");
+        double amount = Convert.ToDouble(Console.ReadLine());
+        if (amount > 0)
+        {
+            balance += amount;
+            Console.WriteLine($"Deposited: ${amount}. New balance: ${balance}");
+        }
+        else
+        {
+            Console.WriteLine("Invalid deposit amount.");
+        }
+    }
+
+    static void Withdraw()
+    {
+        Console.Write("Enter withdrawal amount: ");
+        double amount = Convert.ToDouble(Console.ReadLine());
+        if (amount > 0 && amount <= balance)
+        {
+            balance -= amount;
+            Console.WriteLine($"Withdrew: ${amount}. New balance: ${balance}");
+        }
+        else
+        {
+            Console.WriteLine("Insufficient funds or invalid amount.");
+        }
+    }
+
+    static void TransferMoney()
+    {
+        Console.Write("Enter recipient account number: ");
+        string account = Console.ReadLine();
+        Console.Write("Enter transfer amount: ");
+        double amount = Convert.ToDouble(Console.ReadLine());
+
+        if (amount > 0 && amount <= balance)
+        {
+            balance -= amount;
+            Console.WriteLine($"Transferred: ${amount} to account {account}. New balance: ${balance}");
+        }
+        else
+        {
+            Console.WriteLine("Insufficient funds or invalid transfer amount.");
+        }
+    }
+}
