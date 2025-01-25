@@ -1,0 +1,33 @@
+24. Stack Example
+using System;
+using System.Collections.Generic;
+
+class StackExample
+{
+    static void Main()
+    {
+        Stack<string> stack = new Stack<string>();
+
+        // Push some items onto the stack
+        stack.Push("Task 1");
+        stack.Push("Task 2");
+        stack.Push("Task 3");
+
+        Console.WriteLine("Stack contents:");
+        foreach (var task in stack)
+        {
+            Console.WriteLine(task);
+        }
+
+        // Pop an item from the stack
+        string lastTask = stack.Pop();
+        Console.WriteLine($"\n{lastTask} has been removed from the stack.");
+
+        // Show remaining stack
+        Console.WriteLine("\nRemaining stack:");
+        foreach (var task in stack)
+        {
+            Console.WriteLine(task);
+        }
+    }
+}
