@@ -1,0 +1,32 @@
+34. Character Frequency in a String
+using System;
+using System.Collections.Generic;
+
+class CharacterFrequency
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string input = Console.ReadLine();
+
+        Dictionary<char, int> frequency = new Dictionary<char, int>();
+
+        foreach (char c in input)
+        {
+            if (frequency.ContainsKey(c))
+            {
+                frequency[c]++;
+            }
+            else
+            {
+                frequency[c] = 1;
+            }
+        }
+
+        Console.WriteLine("Character frequencies:");
+        foreach (var item in frequency)
+        {
+            Console.WriteLine($"{item.Key}: {item.Value}");
+        }
+    }
+}
